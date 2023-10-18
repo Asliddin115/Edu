@@ -1,13 +1,525 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul,
+li {
+  list-style: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  background-image: radial-gradient(circle, #42366b, #3e3268, #3b2f64, #382b61, #34285e, #35295e, #352a5e, #362b5e, #3c3161, #413665, #473c68, #4c426b);
+  height: 100vh;
+}
+
+.navbar {
+  /* background-color: rgb(66, 65, 65); */
+  height: 80px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo img {
+  width: 50px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-logo-text {
+  color: #fff;
+  font-size: 25px;
+  opacity: 0.8;
+}
+
+.navbar-logo-text span {
+  color: rgb(59, 164, 224);
+}
+
+.searchbar {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  display: flex;
+  z-index: 3;
+  height: 38px;
+  background: white;
+  border: 1px solid #dfe1e5;
+  box-shadow: none;
+  border-radius: 4px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 224px;
+}
+
+.searchbar:hover {
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.searchbar-wrapper {
+  flex: 1;
+  display: flex;
+  padding: 5px 8px 0 14px;
+}
+
+.searchbar-left {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  display: flex;
+  align-items: center;
+  padding-right: 13px;
+  margin-top: -5px;
+}
+
+.search-icon-wrapper {
+  margin: auto;
+}
+
+.search-icon {
+  margin-top: 3px;
+  color: #9aa0a6;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+
+.searchbar-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.searchbar-center {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.searchbar-input-spacer {
+  color: transparent;
+  flex: 100%;
+  white-space: pre;
+  height: 34px;
+  font-size: 16px;
+}
+
+.searchbar-input {
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 0, 0, .87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  margin-top: -37px;
+  height: 34px;
+  font-size: 15px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.searchbar-right {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: -5px;
+  align-items: stretch;
+  flex-direction: row
+}
+
+.searchbar-clear-icon {
+  margin-right: 12px
+}
+
+.voice-search {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 8px;
+  width: 2.8em;
+}
+
+.navbar-user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+.supmenu {
+  height: 40px;
+  background: #2f274c;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+.bi-list {
+  font-size: 28px;
+  color: #fff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+}
+
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  border-right: 1px solid #746f6f;
+  height: calc(100vh - 130px);
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+  /* background-color: green; */
+  height: calc(100vh - 130px);
+  color: #fff;
+  overflow: auto;
+  padding: 20px;
+}
+
+.sidebar-menu {
+  margin-top: 70px;
+  padding: 0 30px;
+}
+
+.sidebar-menu li {
+  margin-bottom: 40px;
+  font-size: 22px;
+}
+
+.sidebar-menu li a i {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.sidebar-menu li a {
+  opacity: 0.9;
+}
+
+.active {
+  color: #2629cc;
+  margin-right: 10px;
+  font-size: 25px;
+  font-weight: 500;
+
+}
+
+
+
+/* .page_404 {
+width: 100%;
+ font-family: 'Arvo', serif;
+} */
+
+.page_404 img {
+  width: 100%;
+ 
+}
+
+.four_zero_four_bg {
+
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+}
+
+
+/*  */
+
+/* .four_zero_four_bg h3 {
+  font-size: 80px;
+} */
+
+/* .link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #031e01;
+  margin: 20px 0;
+  display: inline-block;
+} */
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+
+
+/* 
+  Table container start */
+.table-container {
+  overflow: auto;
+
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 50px;
+  color: azure;
+  margin-top: 20px;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+
+}
+
+
+.table {
+
+  margin: 0 auto;
+  width: 95%;
+
+}
+
+
+.table td {
+
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+.table th {
+  padding: 15px;
+  text-align: left;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 30px;
+  font-weight: 500;
+
+}
+
+
+
+
+
+/* Table end */
+
+.input {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid hsl(236, 92%, 66%);
+  outline: none;
+  transition: 200ms ease-in;
+  padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.input:focus {
+  border-bottom: 4px solid hsl(236, 92%, 66%);
+  padding-top: 2px;
+}
+
+.input::placeholder {
+  color: hsl(236, 92%, 66%);
+  opacity: 0.5;
+}
+
+/* Button start */
+
+.action-button {
+
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #00b10c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.action-button:hover {
+  background-color: #00f90c;
+}
+
+.delente-button {
+
+  display: inline-block;
+  border-radius: 4px;
+  background-color: red;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.delente-button:hover {
+  background-color: #bd503a;
+}
+
+.save-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: yellow;
+  border: none;
+  color: #000000;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.save-button:hover {
+  background-color: #d9ff00;
+}
+
+/* Button end */
+
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 80px;
+  border: 1px solid rgb(77, 77, 174);
+  border-radius: 10px;
+  color: white;
+  box-shadow: -23px 23px 23px #1c226f,
+    23px -23px 23px #1c226f;
+
+}
+
+.content input {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: monospace;
+  border: none;
+  outline: none;
+  height: 28px;
+}
+
+.title {
+  text-align: center;
+  color: #4043fb;
+  font-family: monospace;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #000000;
+}
+
+.save-button2 {
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  background-color: yellow;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 80px;
+
+}
+
+.save-button2:hover {
+  background-color: #d9ff00;
+}
+
+.message {
+  color: #d9f28e;
+  font-weight: bold;
+  text-align: center;
+  font-family: monospace;
+  margin: 10px 40px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: monospace;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
